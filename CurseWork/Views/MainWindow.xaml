@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurseWork"
-       
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
      
@@ -13,32 +14,38 @@
             <ImageBrush ImageSource="../Images/skai.jpg" Stretch="Fill" Opacity="0.2"/>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="250"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/> 
+            <RowDefinition Height="300"/> 
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="2" x:Name="street" ItemsSource="{Binding Source={StaticResource Res}, Path=StreetsList}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Улица" Binding="{Binding Title}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Grid.Row="3">
-            <Button  Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Ok</Button>
-           
-        </StackPanel>
-        <TextBlock Grid.Row="0" HorizontalAlignment="Center"  FontFamily="Arial Bold Italic" FontSize="30" Foreground="White" Margin="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="280"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  FontFamily="Arial Bold Italic" FontSize="30" Foreground="White" Margin="1">
             <TextBlock.Effect>
                 <DropShadowEffect BlurRadius="15"></DropShadowEffect>
             </TextBlock.Effect>
             <TextBlock.Text>Почтовое отделение</TextBlock.Text>
         </TextBlock>
 
-        <Button Grid.Row="1">
-            
-        </Button>
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Таблицы">
+            <StackPanel>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=PublicationWindowCommand}">Издания</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=SubscriberWindowCommand}">Подписки</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="ddddddd">
+            <StackPanel>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </Window>

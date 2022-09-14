@@ -64,19 +64,7 @@ namespace Сoursework.Models
                 _price = value;
                 OnPropertyChanged("Price");
             }
-        }
-        // фото
-        private string _foto;
-
-        public string Foto
-        {
-            get { return _foto; }
-            set { _foto = value; }
-        }
-
-
-        // связь с оператором
-        //public virtual List<Operator> Operators { get; set; }
+        } 
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

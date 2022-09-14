@@ -18,7 +18,7 @@ internal class ViewModel
 
 
     public ObservableCollection<Postman> PostmanList { get; set; }
-    public ObservableCollection<Publication> Publications { get; set; }
+    public ObservableCollection<Publication> PublicList { get; set; }
     public ObservableCollection<Region> RegionList { get; set; }
     public ObservableCollection<Street> StreetsList { get; set; }
     public ObservableCollection<Subscriber> SubscribersList { get; set; }
@@ -26,7 +26,7 @@ internal class ViewModel
     public ViewModel()
     {
         PostmanList = new ObservableCollection<Postman>();
-        Publications = new ObservableCollection<Publication>();
+        PublicList = new ObservableCollection<Publication>();
         RegionList = new ObservableCollection<Region>();
         StreetsList = new ObservableCollection<Street>();
         SubscribersList = new ObservableCollection<Subscriber>();
@@ -41,7 +41,29 @@ internal class ViewModel
             {
                 _controller.ShowStreet(StreetsList);
             }));
-        }
+    }
+    // открывает окно подписки
+    private RelayCommand _subscriberWindowCommand;
+
+    public RelayCommand SubscriberWindowCommand
+    {
+        get => _subscriberWindowCommand ??
+            (_subscriberWindowCommand = new RelayCommand(obj =>
+           {
+               _controller.SubscriberWindow(SubscribersList);
+           }));
+    }
+    // открывает окно издания
+    private RelayCommand _publicationWindowCommand;
+
+    public RelayCommand PublicationWindowCommand
+    {
+        get => _publicationWindowCommand ??
+            (_publicationWindowCommand = new RelayCommand(obj =>
+            {
+                _controller.PublicationWindow(PublicList);
+            }));
+    }
 
 }
 

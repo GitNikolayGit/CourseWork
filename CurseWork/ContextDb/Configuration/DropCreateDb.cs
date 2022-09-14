@@ -47,17 +47,17 @@ namespace CurseWork.ContextDb.Configuration
             };
             List<Publication> publications = new List<Publication>
             {
-                new Publication { Id = 0, Index = 15015, Title = "1000 советов дачнику", TypePublic = "газета", Price = 290, Foto = "15015.jpg" },
-                new Publication { Id = 1, Index = 11440, Title = "STOP-газета", TypePublic = "газета", Price = 296, Foto = "11440.jpg" },
-                new Publication { Id = 2, Index = 85493, Title = "Карусель времени", TypePublic = "газета", Price = 203, Foto ="85493.png" },
-                new Publication { Id = 3, Index = 32128, Title = "АИФ. Здоровье", TypePublic = "газета", Price = 244, Foto = "32128.jpg" },
-                new Publication { Id = 4, Index = 13015, Title = "3/9 Царство", TypePublic = "журнал", Price = 185, Foto = "13015.jpg" },
-                new Publication { Id = 5, Index = 45364, Title = "За рулем", TypePublic = "журнал", Price = 394, Foto = "45364.jpg" },
-                new Publication { Id = 6, Index = 11351, Title = "Педагогика", TypePublic = "журнал", Price = 1190, Foto = "11351.jpg" },
-                new Publication { Id = 7, Index = 59979, Title = "Техника радиосвязи", TypePublic = "журнал", Price = 280, Foto = "59979.jpg" },
-                new Publication { Id = 8, Index = 70610, Title = "На боевом посту", TypePublic = "журнал", Price = 251, Foto = "70610.jpg" },
-                new Publication { Id = 9, Index = 43303, Title = "Здоровье", TypePublic = "журнал", Price = 524, Foto = "43303.jpg" },
-                new Publication { Id = 10, Index = 11750, Title = "Аргументы и факты", TypePublic = "газета", Price = 427, Foto = "11750.jpg" },
+                new Publication { Id = 0, Index = 15015, Title = "1000 советов дачнику", TypePublic = "газета", Price = 290  },
+                new Publication { Id = 1, Index = 11440, Title = "STOP-газета", TypePublic = "газета", Price = 296 },
+                new Publication { Id = 2, Index = 85493, Title = "Карусель времени", TypePublic = "газета", Price = 203 },
+                new Publication { Id = 3, Index = 32128, Title = "АИФ. Здоровье", TypePublic = "газета", Price = 244 },
+                new Publication { Id = 4, Index = 13015, Title = "3/9 Царство", TypePublic = "журнал", Price = 185 },
+                new Publication { Id = 5, Index = 45364, Title = "За рулем", TypePublic = "журнал", Price = 394 },
+                new Publication { Id = 6, Index = 11351, Title = "Педагогика", TypePublic = "журнал", Price = 1190 },
+                new Publication { Id = 7, Index = 59979, Title = "Техника радиосвязи", TypePublic = "журнал", Price = 280 },
+                new Publication { Id = 8, Index = 70610, Title = "На боевом посту", TypePublic = "журнал", Price = 251 },
+                new Publication { Id = 9, Index = 43303, Title = "Здоровье", TypePublic = "журнал", Price = 524 },
+                new Publication { Id = 10, Index = 11750, Title = "Аргументы и факты", TypePublic = "газета", Price = 427 }
             };
             List<Subscriber> subscribers = new List<Subscriber>
             {

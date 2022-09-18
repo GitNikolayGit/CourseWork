@@ -53,6 +53,15 @@ namespace Сoursework.Models
                // OnPropertyChanged("Patronymic");
             }
         }
+        // строковое представление участков
+        private string? _regionStr;
+
+        public string? RegionStr
+        {
+            get { return _regionStr; }
+            set { _regionStr = value; }
+        }
+
         // участки
         private List<Region> _regions;
        
@@ -73,6 +82,11 @@ namespace Сoursework.Models
         public Postman()
         {
             Regions = new List<Region>();
+        }
+
+        public override string ToString()
+        {
+            return $"{Id}";
         }
 
 

@@ -7,20 +7,20 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="590" Width="850">
      
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="../Images/skai.jpg" Stretch="Fill" Opacity="0.2"/>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/> 
-            <RowDefinition Height="300"/> 
+            <RowDefinition Height="80"/> 
+            <RowDefinition Height="450"/> 
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="280"/>
             <ColumnDefinition Width="280"/>
-            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="270"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  FontFamily="Arial Bold Italic" FontSize="30" Foreground="White" Margin="1">
@@ -34,17 +34,27 @@
             <StackPanel>
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=PublicationWindowCommand}">Издания</Button>
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=SubscriberWindowCommand}">Подписки</Button>
-                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
-                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=PostmanWindowCommand}">Почтальоны</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=RegionWindowCommand}">Участки</Button> 
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Row="1" Grid.Column="1" Header="ddddddd">
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Запросы">
             <StackPanel>
-                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
-                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
-                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
-                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ShowStreetCommand}">Okdddddd</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=InfoCommand}">Описание запросов</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square01Command}">Запрос 1</Button>
+                <Button Opacity="0.7"   >Запрос 2</Button>
+                <Button Opacity="0.7"   >Запрос 3</Button> 
+                <Button Opacity="0.7"   >Запрос 4</Button>
+                <Button Opacity="0.7"  >Запрос 5</Button>
+                <Button Opacity="0.7"  >Запрос 6</Button>
             </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="2" Header="Информация">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <StackPanel>
+                    <TextBlock FontSize="16" Padding="5" TextWrapping="Wrap" Text="{Binding Source={StaticResource Res}, Path=Info}"/>
+                </StackPanel>
+            </ScrollViewer>
         </GroupBox>
 
     </Grid>

@@ -41,6 +41,15 @@ namespace Сoursework.Models
               //  OnPropertyChanged("MaxHouse");
             }
         }
+        // строчное представление улиц
+        private string? _streetStr;
+
+        public string? StreetStr
+        {
+            get { return _streetStr; }
+            set { _streetStr = value; }
+        }
+
 
 
         // связь с почтальоном

@@ -70,8 +70,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\PostmanWindow.xaml.cs">
+      <DependentUpon>PostmanWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PublicationWindow.xaml.cs">
       <DependentUpon>PublicationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegionWindow.xaml.cs">
+      <DependentUpon>RegionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SubscriberWindow.xaml.cs">
       <DependentUpon>SubscriberWindow.xaml</DependentUpon>
@@ -88,7 +94,6 @@
     <Compile Include="ContextDb\MailContext.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Controllers\RelayCommand.cs" />
-    <Compile Include="Models\Additionally\Receipt.cs" />
     <Compile Include="Models\Tables\Postman.cs" />
     <Compile Include="Models\Tables\Publication.cs" />
     <Compile Include="Models\Tables\Region.cs" />
@@ -99,7 +104,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PostmanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PublicationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,7 +148,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Additionally\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\11351.jpg" />
     <Resource Include="Images\11440.jpg" />

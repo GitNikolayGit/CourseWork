@@ -28,12 +28,55 @@ internal class ViewModel : INotifyPropertyChanged
         }
     }
 
+    private string _street;
+
+    public string Street
+    {
+        get { return _street; }
+        set {
+            _street = value;
+            OnPropertyChanged("Street");
+        }
+    }
+    // surname
+    private string _surname;
+
+    public string Surname
+    {
+        get { return _surname; }
+        set {
+            _surname = value;
+            OnPropertyChanged("Surname");
+        }
+    }
+    // name
+    private string _name;
+
+    public string Name
+    {
+        get { return _name; }
+        set {
+            _name = value;
+            OnPropertyChanged("Name");
+        }
+    }
+    // patronymic
+    private string _patronymic;
+
+    public string Patronymic
+    {
+        get { return _patronymic; }
+        set {
+            _patronymic = value;
+            OnPropertyChanged("Patronymic");
+        }
+    }
 
 
     public ObservableCollection<Postman> PostmanList { get; set; }
     public ObservableCollection<Publication> PublicList { get; set; }
     public ObservableCollection<Region> RegionList { get; set; }
-   // public ObservableCollection<Street> StreetsList { get; set; }
+    public ObservableCollection<Street> StreetsList { get; set; }
     public ObservableCollection<Subscriber> SubscribersList { get; set; }
 
     public ViewModel()
@@ -41,8 +84,9 @@ internal class ViewModel : INotifyPropertyChanged
         PostmanList = new ObservableCollection<Postman>();
         PublicList = new ObservableCollection<Publication>();
         RegionList = new ObservableCollection<Region>();
-    //    StreetsList = new ObservableCollection<Street>();
+        StreetsList = new ObservableCollection<Street>();
         SubscribersList = new ObservableCollection<Subscriber>();
+        _controller.FillStreet(StreetsList);
     }
 
     private void FillInfo()
@@ -60,17 +104,6 @@ internal class ViewModel : INotifyPropertyChanged
             PropertyChanged(this, new PropertyChangedEventArgs(prop));
     }
 
-    // команды
-   // private RelayCommand _showStreetCommand;
-   //
-   // public RelayCommand ShowStreetCommand
-   // {
-   //     get => _showStreetCommand ??
-   //         (_showStreetCommand = new RelayCommand(obj =>
-   //         {
-   //             _controller.ShowStreet(StreetsList);
-   //         }));
-   // }
     // открывает окно подписки
     private RelayCommand _subscriberWindowCommand;
 
@@ -138,10 +171,57 @@ internal class ViewModel : INotifyPropertyChanged
             (
                 _square01Command = new RelayCommand(obj =>
                {
-                   Info = _controller.Square01(PublicList);
+                   Info = _controller.Square01();
                }));
     }
+    // запрос 2
+    private RelayCommand _square02Command;
 
+    public RelayCommand Square02Command
+    {
+        get => _square02Command ??
+            (
+                _square02Command = new RelayCommand(obj =>
+                {
+                    Info = _controller.Square02(PostmanList, RegionList);
+                }));
+    }
+    // запрос 3
+    private RelayCommand _square03Command;
+
+    public RelayCommand Square03Command
+    {
+        get => _square03Command ??
+            (
+                _square03Command = new RelayCommand(obj =>
+                {
+                    Info = _controller.Square03(); 
+                }));
+    }
+    // запрос 4
+    private RelayCommand _square04Command;
+
+    public RelayCommand Square04Command
+    {
+        get => _square04Command ??
+            (
+                _square04Command = new RelayCommand(obj =>
+                {
+                    Info = $"В почтовом отделении работает {_controller.Square04()} почтальонов";
+                }));
+    }
+    // запрос 5
+    private RelayCommand _square05Command;
+
+    public RelayCommand Square05Command
+    {
+        get => _square05Command ??
+            (
+                _square05Command = new RelayCommand(obj =>
+                {
+                    Info = _controller.Square05();
+                }));
+    }
 
 
 

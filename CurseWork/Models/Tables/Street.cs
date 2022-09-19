@@ -48,6 +48,6 @@ public class Street : INotifyPropertyChanged
     public void OnPropertyChanged([CallerMemberName] string prop = "")
     {
         PropertyChanged(this, new PropertyChangedEventArgs(prop));
-    }
+    } 
 }
 

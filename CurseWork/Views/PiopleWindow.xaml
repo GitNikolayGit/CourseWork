@@ -1,0 +1,22 @@
+﻿<Window x:Class="CurseWork.Views.PiopleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CurseWork.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Подписчик" Height="300" Width="280">
+    <Grid>
+        <StackPanel Margin="15, 15">
+            <Label>Фамилия</Label>
+            <TextBox Name="tbSurname"   FontSize="18"></TextBox>
+            <Label>Имя</Label>
+            <TextBox Name="tbName"   FontSize="18"></TextBox>
+            <Label>Отчество</Label>
+            <TextBox Name="tbPatronymic"   FontSize="18"></TextBox>
+            <Button Height="35" Margin="0, 15, 0, 0" Click="Close_Click">Готово</Button>
+        </StackPanel>
+    </Grid>
+</Window>

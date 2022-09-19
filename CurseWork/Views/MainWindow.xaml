@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="590" Width="850">
      
-    <Grid>
+    <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="../Images/skai.jpg" Stretch="Fill" Opacity="0.2"/>
         </Grid.Background>
@@ -42,17 +42,18 @@
             <StackPanel>
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=InfoCommand}">Описание запросов</Button>
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square01Command}">Запрос 1</Button>
-                <Button Opacity="0.7"   >Запрос 2</Button>
-                <Button Opacity="0.7"   >Запрос 3</Button> 
-                <Button Opacity="0.7"   >Запрос 4</Button>
-                <Button Opacity="0.7"  >Запрос 5</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square02Command}">Запрос 2</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square03Command}"  >Запрос 3</Button> 
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square04Command}"  >Запрос 4</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square05Command}" >Запрос 5</Button>
                 <Button Opacity="0.7"  >Запрос 6</Button>
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Row="1" Grid.Column="2" Header="Информация">
+        <GroupBox Grid.Row="1" Grid.Column="2" Header="Информация" >
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <StackPanel>
+                <StackPanel >
                     <TextBlock FontSize="16" Padding="5" TextWrapping="Wrap" Text="{Binding Source={StaticResource Res}, Path=Info}"/>
+                    
                 </StackPanel>
             </ScrollViewer>
         </GroupBox>

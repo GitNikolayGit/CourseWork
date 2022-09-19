@@ -70,6 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\AddressWindow.xaml.cs">
+      <DependentUpon>AddressWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PiopleWindow.xaml.cs">
+      <DependentUpon>PiopleWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PostmanWindow.xaml.cs">
       <DependentUpon>PostmanWindow.xaml</DependentUpon>
     </Compile>
@@ -82,6 +88,10 @@
     <Compile Include="Views\SubscriberWindow.xaml.cs">
       <DependentUpon>SubscriberWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\AddressWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,6 +114,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PiopleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PostmanWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -70,7 +70,7 @@ internal class ViewModel : INotifyPropertyChanged
             _patronymic = value;
             OnPropertyChanged("Patronymic");
         }
-    }
+    } 
 
 
     public ObservableCollection<Postman> PostmanList { get; set; }
@@ -89,9 +89,9 @@ internal class ViewModel : INotifyPropertyChanged
         _controller.FillStreet(StreetsList);
     }
 
-    private void FillInfo()
+    private void FillInfo(string file)
     {
-        using (var sr = new StreamReader("text.txt"))
+        using (var sr = new StreamReader(file))
         {
             Info = sr.ReadToEnd();
         }
@@ -150,18 +150,34 @@ internal class ViewModel : INotifyPropertyChanged
                     _controller.RegionWindow(RegionList);
                 }));
     }
-    // выводит информацию
-    private RelayCommand _InfoCommand;
+    // выводит информацию о запросах
+    private RelayCommand _infoCommand;
 
     public RelayCommand InfoCommand
     {
-        get => _InfoCommand ??
+        get => _infoCommand ??
             (
-                _InfoCommand = new RelayCommand(obj =>
+                _infoCommand = new RelayCommand(obj =>
                 {
-                    FillInfo();
+                    FillInfo("text.txt");
                 }));
     }
+    // выводит информацию о отчетах
+    private RelayCommand _info2Command;
+
+    public RelayCommand Info2Command
+    {
+        get => _info2Command ??
+            (
+                _info2Command = new RelayCommand(obj =>
+                {
+                    FillInfo("text2.txt");
+                }));
+    }
+
+
+    #region запросы
+
     // запрос 1
     private RelayCommand _square01Command;
 
@@ -222,8 +238,55 @@ internal class ViewModel : INotifyPropertyChanged
                     Info = _controller.Square05();
                 }));
     }
+    // запрос 6
+    private RelayCommand _square06Command;
 
+    public RelayCommand Square06Command
+    {
+        get => _square06Command ??
+            (
+                _square06Command = new RelayCommand(obj =>
+                {
+                    Info = _controller.Square06();
+                }));
+    }
+    #endregion
+    // справка
+    private RelayCommand _referenceCommand;
 
+    public RelayCommand ReferenceCommand
+    {
+        get => _referenceCommand ??
+            (
+                _referenceCommand = new RelayCommand(obj =>
+               {
+                   Info = _controller.Reference();
+               }));
+    }
+    // отчет 2
+    private RelayCommand _reportCommand;
+
+    public RelayCommand ReportCommand
+    {
+        get => _reportCommand ??
+            (
+                _reportCommand = new RelayCommand(obj =>
+                {
+                    Info = _controller.Report2();
+                }));
+    }
+    // отчет 3
+    private RelayCommand _report3Command;
+
+    public RelayCommand Report3Command
+    {
+        get => _report3Command ??
+            (
+                _report3Command = new RelayCommand(obj =>
+                {
+                    Info = _controller.Report3();
+                }));
+    }
 
 }
 

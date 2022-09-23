@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="PostmanWindow" Height="550" Width="1200">
+        Title="PostmanWindow" Height="580" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -19,7 +19,9 @@
             </TextBlock.Effect>
             <TextBlock.Text>Почтальоны</TextBlock.Text>
         </TextBlock>
-        <DataGrid Grid.Row="1" x:Name="street" ItemsSource="{Binding Source={StaticResource Res}, Path=PostmanList}">
+        <DataGrid Grid.Row="1" x:Name="street" 
+                  IsReadOnly="True"
+                  ItemsSource="{Binding Source={StaticResource Res}, Path=PostmanList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Width="50" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Фамилия" Width="230" Binding="{Binding Surname}"/>

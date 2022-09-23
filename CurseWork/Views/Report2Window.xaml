@@ -1,4 +1,4 @@
-﻿<Window x:Class="CurseWork.Views.SubscriberWindow"
+﻿<Window x:Class="CurseWork.Views.Report2Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="SubscriberWindow" Height="580" Width="1200">
+        Title="Report2Window" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -21,15 +21,13 @@
         </TextBlock>
         <DataGrid Grid.Row="1" x:Name="street" ItemsSource="{Binding Source={StaticResource Res}, Path=SubscribersList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Width="40" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Фамилия" Width="150" Binding="{Binding Surname}"/>
-                <DataGridTextColumn Header="Имя" Width="150" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Отчество" Width="150" Binding="{Binding Patronymic}"/>
-                <DataGridTextColumn Header="Улица" Width="170" Binding="{Binding Street}"/>
-                <DataGridTextColumn Header="Дом" Width="80" Binding="{Binding House}"/>
-                <DataGridTextColumn Header="Квартира" Width="100" Binding="{Binding Flat}"/>
-                <DataGridTextColumn Header="Индекс" Width="100" Binding="{Binding Index}"/>
-                <DataGridTextColumn Header="Дата" Width="125" Binding="{Binding StartDate, StringFormat=dd.mm.yyyy}"/>
+                <DataGridTextColumn Header="Участок" Width="40" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Почтальон" Width="150" Binding="{Binding Surname}"/> 
+                <DataGridTextColumn Header="Издания" Width="170" Binding="{Binding Street}"/>
+                <DataGridTextColumn Header="Название" Width="80" Binding="{Binding House}"/>
+                <DataGridTextColumn Header="Улица" Width="100" Binding="{Binding Flat}"/>
+                <DataGridTextColumn Header="Дом" Width="100" Binding="{Binding Index}"/>
+                <DataGridTextColumn Header="Квартира" Width="125" Binding="{Binding StartDate, StringFormat=dd.mm.yyyy}"/>
                 <DataGridTextColumn Header="Месяцев" Width="100" Binding="{Binding MonthCount}"/>
             </DataGrid.Columns>
         </DataGrid>

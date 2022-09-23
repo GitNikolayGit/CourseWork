@@ -26,9 +26,7 @@ namespace Сoursework.Models
                 _minHouse = value; 
               //  OnPropertyChanged("MinHouse");
             }
-        }
-
-
+        } 
         // max номер дома на участке
         // public int MaxHouse { get; set; }
         private int _maxHouse;
@@ -42,15 +40,15 @@ namespace Сoursework.Models
             }
         }
         // строчное представление улиц
-        private string? _streetStr;
+        private string _streetStr;
 
-        public string? StreetStr
+        public string StreetStr
         {
             get { return _streetStr; }
             set { _streetStr = value; }
         }
 
-
+       
 
         // связь с почтальоном
         //public virtual List<Postman> Postmans { get; set; }
@@ -61,7 +59,7 @@ namespace Сoursework.Models
             get { return _postmans; }
             set {
                 _postmans = value;
-               // OnPropertyChanged("Postmans");
+                //OnPropertyChanged("Postmans");
             }
         }
 
@@ -75,7 +73,7 @@ namespace Сoursework.Models
             get { return _streets; }
             set {
                 _streets = value;
-              //  OnPropertyChanged("Streets");
+                //OnPropertyChanged("Streets");
             }
         }
 

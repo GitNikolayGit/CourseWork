@@ -85,6 +85,9 @@
     <Compile Include="Views\RegionWindow.xaml.cs">
       <DependentUpon>RegionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Report2Window.xaml.cs">
+      <DependentUpon>Report2Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SubscriberWindow.xaml.cs">
       <DependentUpon>SubscriberWindow.xaml</DependentUpon>
     </Compile>
@@ -127,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Report2Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

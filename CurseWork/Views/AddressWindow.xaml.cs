@@ -26,6 +26,13 @@ namespace CurseWork.Views
 
         public void Close_Click(object sender, RoutedEventArgs e)
         {
+            int res = -1;
+            if (!int.TryParse(tbHouse.Text, out res))
+            {
+                MessageBox.Show("значение, номер дома не число");
+                tbHouse.Text = "";
+                return;
+            }
             Close();
         }
     }

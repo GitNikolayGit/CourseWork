@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,78 @@ namespace CurseWork.ContextDb.Configuration
             db.Publications.AddRange(publications);
             db.Subscribers.AddRange(subscribers);
             db.SaveChanges();
+
+            // добавление процедур
+            string connectString = "Server=(LocalDb)\\MSSQLLocalDB;initial catalog=CurseWork.ContextDb.MailContext;Trusted_Connection=True;";
+            // уникальные подписчики
+            string proc1 =
+                @" 
+create function DistinctSubscriber()
+    returns table
+    as
+    return  
+         select  distinct 
+             Surname
+             , FirstName
+             , Patronymic   
+         from
+             Subscribers   
+";
+            // количество подписчиков
+            string proc2 = @"
+create function CountSubscriber()
+    returns int
+    as
+    begin
+        declare @n int
+        select @n = (
+        select
+            count(*)
+        from
+            DistinctSubscriber()
+        )
+        return @n
+    end
+";
+            // уникальные индексы изданий
+            string proc3 = @"
+create function DistinctPublication ()
+    returns table
+    as
+    return
+        select distinct
+            [Index]
+        from
+            Subscribers
+";
+            // количество выписаных изданий
+            string proc4 = @"
+create function CountPublication()
+    returns int
+    as
+    begin
+        declare @n int
+        select @n = (
+            select
+                count(*)
+            from
+                DistinctPublication()
+            )
+            return @n
+    end
+";
+            using(SqlConnection connection = new(connectString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(proc1, connection);
+                command.ExecuteNonQuery();
+                command.CommandText = proc2;
+                command.ExecuteNonQuery();
+                command.CommandText = proc3;
+                command.ExecuteNonQuery();
+                command.CommandText = proc4;
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

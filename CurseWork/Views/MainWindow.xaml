@@ -7,7 +7,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         mc:Ignorable="d"
-        Title="MainWindow" Height="590" Width="850">
+        Title="MainWindow" Height="580" Width="1200">
      
     <Grid >
         <Grid.Background>
@@ -20,10 +20,11 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="280"/>
             <ColumnDefinition Width="280"/>
-            <ColumnDefinition Width="270"/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="339"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Center"  FontFamily="Arial Bold Italic" FontSize="30" Foreground="White" Margin="1">
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center"  FontFamily="Arial Bold Italic" FontSize="30" Foreground="White" Margin="1">
             <TextBlock.Effect>
                 <DropShadowEffect BlurRadius="15"></DropShadowEffect>
             </TextBlock.Effect>
@@ -46,14 +47,21 @@
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square03Command}"  >Запрос 3</Button> 
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square04Command}"  >Запрос 4</Button>
                 <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square05Command}" >Запрос 5</Button>
-                <Button Opacity="0.7"  >Запрос 6</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Square06Command}" >Запрос 6</Button>
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Row="1" Grid.Column="2" Header="Информация" >
-            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <GroupBox Grid.Row="1" Grid.Column="2" Header="Отчеты">
+            <StackPanel>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Info2Command}">Описание отчетов</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ReferenceCommand}">Отчет 1</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=ReportCommand}">Отчет 2</Button>
+                <Button Opacity="0.7" Command="{Binding Source={StaticResource Res}, Path=Report3Command}">Отчет 3</Button>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="3" Header="Информация" >
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel >
-                    <TextBlock FontSize="16" Padding="5" TextWrapping="Wrap" Text="{Binding Source={StaticResource Res}, Path=Info}"/>
-                    
+                    <TextBlock Foreground="DarkGreen" FontSize="16" Padding="5" TextWrapping="Wrap" Text="{Binding Source={StaticResource Res}, Path=Info}"/> 
                 </StackPanel>
             </ScrollViewer>
         </GroupBox>

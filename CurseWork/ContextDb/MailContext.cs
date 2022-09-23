@@ -27,9 +27,13 @@ namespace CurseWork.ContextDb
         public DbSet<Street> Streets { get; set; }
         public DbSet<Region> Regions { get; set; }
         public DbSet<Postman> Postmans { get; set; }
-        public DbSet<Subscriber> Subscribers { get; set; }
-       // public DbSet<Manager> Managers { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; } 
         public DbSet<Publication> Publications { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<MailContext>().MapToStoredProcedures();
+        //}
     }
 
     //public class MyEntity

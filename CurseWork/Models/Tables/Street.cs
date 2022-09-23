@@ -23,19 +23,7 @@ public class Street : INotifyPropertyChanged
           //  OnPropertyChanged("Title");
         }
     }
-
-
-    // связь с участками
-    // private List<Region> _regions;
-    //
-    // public List<Region> Regions
-    // {
-    //     get { return _regions; }
-    //     set {
-    //         _regions = value;
-    //         OnPropertyChanged("Regions");
-    //     }
-    // }
+     
     public List<Region> Regions { get; set; }
 
 
